@@ -11,5 +11,20 @@ export class UsersService {
     create(email: string, password: string) {
         const user = this.repo.create({email, password})
         return this.repo.save(user)
+        // return this.repo.save({email, password}) Hooks not executed
+        // save, remove => execute hooks
+        // insert, delete, update => don't execute hooks
     }
+
+    findOne(id : number) {
+        return this.repo.findOne({where:{id}})
+    }
+
+    find(email:string) {
+        return this.repo.find({where:{email}})
+    }
+
+    update() {}
+
+    remove() {}
 }
