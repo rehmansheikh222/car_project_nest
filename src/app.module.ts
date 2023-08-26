@@ -11,7 +11,7 @@ import { Report } from './reports/report.entity';
 @Module({
   imports: [ConfigModule.forRoot({
     isGlobal: true,
-    envFilePath: `.env.development`
+    envFilePath: `.env.${process.env.NODE_ENV}`
   }),
   //   TypeOrmModule.forRoot({
   //   type:'sqlite',
